@@ -1,9 +1,9 @@
 import React from 'react';
 //import {View, Text, TouchableHighlight, Image} from 'react-native';
 import {createDrawerNavigator, createAppContainer} from 'react-navigation';
-import Screen1 from './src/containers/screen1'
-import Screen2 from './src/containers/screen2'
-import Screen3 from './src/containers/screen3'
+import Screen1 from './src/containers/Screen1/screen1'
+import Screen2 from './src/containers/Screen2/screen2'
+import Screen3 from './src/containers/Screen3/screen3'
 //import HeaderNavigationBar from './src/containers/HeaderNavigatorBar'
 
 /*class HeaderNavigationBar extends Component {

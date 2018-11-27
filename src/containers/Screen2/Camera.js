@@ -206,7 +206,7 @@ export default class Camera extends Component {
   //getTime = () => moment().format('DD-MM-YYYY HH:mm:ss')
 
   getCurrentPosition = () => {
-    const options = {enableHighAccuracy: false, timeout: 10000, maximumAge: 1000}
+    const options = {enableHighAccuracy: true, timeout: 10000, maximumAge: 1000}
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject, options)
     })
@@ -238,7 +238,7 @@ export default class Camera extends Component {
         const file = this.fileName('jpg')
         RNFS.moveFile(data.uri, file)
         console.log(`${data.exif.DateTime} / latitude: ${latitude} / longitude: ${longitude} / altitude: ${altitude} / ${file}`)
-        this.props.isReady(true, this.geolocation, data.exif.DateTime)
+        this.props.isReady(this.geolocation, data.exif.DateTime)
       } catch (error) {
         this.geolocation.error = error.message
         console.log(error.message)
@@ -246,7 +246,7 @@ export default class Camera extends Component {
           RNFS.unlink(this.imageUri)
         }
         //Alert.alert('Error', error.message)
-        this.props.isReady(false, this.geolocation)
+        this.props.isReady(this.geolocation)
       }
 
       /*navigator.geolocation.getCurrentPosition(

@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View, WebView, Button} from 'react-native'
-import HeaderNavigationBar from "./HeaderNavigatorBar"
+import HeaderNavigationBar from "../HeaderNavigatorBar"
 
 export default class Screen3 extends React.Component {
   /*state = {

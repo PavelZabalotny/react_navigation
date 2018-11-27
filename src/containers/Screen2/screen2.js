@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View, Button} from 'react-native'
-import HeaderNavigationBar from "./HeaderNavigatorBar"
+import HeaderNavigationBar from "../HeaderNavigatorBar"
 import Camera from './Camera'
 
 export default class Screen2 extends React.Component {
@@ -55,9 +55,9 @@ export default class Screen2 extends React.Component {
     </View>);
   }
 
-  handleReadyCamera = (bool, geolocation, timestamp) => {
-    if (bool) {
-      const {latitude, longitude, altitude, accuracy, error} = geolocation
+  handleReadyCamera = (geolocation, timestamp) => {
+    const {latitude, longitude, altitude, accuracy, error} = geolocation
+    if (!error) {
       this.setState({
         isPressButton: false,
         timestamp,
@@ -73,7 +73,7 @@ export default class Screen2 extends React.Component {
       this.setState({
         isPressButton: false,
         geolocation: {
-          error: geolocation.error
+          error
         }
       })
     }

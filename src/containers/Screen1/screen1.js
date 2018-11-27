@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View} from 'react-native'
-import HeaderNavigationBar from './HeaderNavigatorBar'
+import HeaderNavigationBar from '../HeaderNavigatorBar'
 
 export default class Screen1 extends React.Component {
 
